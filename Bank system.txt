@@ -1,0 +1,40 @@
+balance = 0
+
+while True:
+    print("\n=== Simple Bank System ===")
+    print("1. Check Balance")
+    print("2. Deposit")
+    print("3. Withdraw")
+    print("4. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        print(f"Current Balance: ₱{balance}")
+
+    elif choice == "2":
+        amount = float(input("Enter deposit amount: ₱"))
+        
+        if amount > 0:
+            balance += amount
+            print(f"₱{amount} deposited successfully.")
+        else:
+            print("Invalid amount.")
+
+    elif choice == "3":
+        amount = float(input("Enter withdrawal amount: ₱"))
+
+        if amount > balance:
+            print("Insufficient balance.")
+        elif amount <= 0:
+            print("Invalid amount.")
+        else:
+            balance -= amount
+            print(f"₱{amount} withdrawn successfully.")
+
+    elif choice == "4":
+        print("Thank you for using the bank system.")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
